@@ -7,7 +7,7 @@ int main()
     cout << "Enter string " << endl;
     cin >> str;
 
-    int state = 0;
+    int state = 0,k=0;
 
     for (int i = 0; str[i] != '\0'; i++)
     {
@@ -15,8 +15,8 @@ int main()
         {
             if (str[0] == 'a')
             {
-                state = 1;
-                break;
+                state = 0;
+                k = 1;
             }
             else if (str[0] == 'b' || str[0] == 'c')
             {
@@ -47,9 +47,13 @@ int main()
         }
     }
 
-    if (state == 1)
+    if (state == 1 && k==0)
     {
         cout << "Accepted" << endl;
+    }
+    else if(state==0 && k==1)
+    {
+        cout << "Rejected" << endl;
     }
     else
     {
