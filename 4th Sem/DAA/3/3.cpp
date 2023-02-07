@@ -1,5 +1,4 @@
-#include <iostream>
-#include <stdio.h>
+#include<bits/stdc++.h>
 int binarySearch(int k, struct Array a);
 using namespace std;
 struct Array
@@ -14,7 +13,7 @@ int main()
     int key;
     cout << "Enter size of array" << endl;                                      
     cin >> arr.size;
-    cout << "Enter lendth of array" << endl;
+    cout << "Enter length of array" << endl;
     cin >> arr.length;
     arr.A=new int[arr.length];
     cout << "Enter Sorted array" << endl;
@@ -47,17 +46,17 @@ int binarySearch(int k, struct Array a)
     }
     return -1;
 }
-int binarySearchRecursive(int l,int h,int k,struct Array a)
-{
-    int mid = (l + h) / 2;
-    if(l<=h)
-    {
-        if(k==a.A[mid])
-            return mid;
-        else if(k<a.A[mid])
-            return binarySearchRecursive(l, mid - 1, k, a);
-        else
-            return binarySearchRecursive(mid + 1, h, k, a);
-    }
-    return -1;
-}
+// int binarySearchRecursive(int l,int h,int k,struct Array a)
+// {
+//     int mid = (l + h) / 2;
+//     if(l<=h)
+//     {
+//         if(k==a.A[mid])
+//             return mid;
+//         else if(k<a.A[mid])
+//             return binarySearchRecursive(l, mid - 1, k, a);
+//         else
+//             return binarySearchRecursive(mid + 1, h, k, a);
+//     }
+//     return -1;
+// }

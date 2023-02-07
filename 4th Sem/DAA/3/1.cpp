@@ -10,6 +10,7 @@ void displayArray(int arr[], int n)
     }
 }
 
+
 void insertionSortAscending(int *arr, int n)
 {
     int i, key, j;
@@ -64,8 +65,43 @@ void TCforInsertionSortD(int *arr, int n)
     insertionSortDescending(arr, n);
     end = clock();
 
-    double time_takken = double(end - start) / double(CLOCKS_PER_SEC);
+    double time_takken = (double)(end - start) /(CLOCKS_PER_SEC);
     cout << "Time takken by insertion sort of array in ascending order is " << endl<< time_takken<<endl;
+}
+
+void TCforInsertionA(int *arr, int n)
+{
+    clock_t start, end;
+    start = clock();
+    insertionSortAscending(arr, n);
+    end = clock();
+
+    double time_takken = (double)(end - start) / CLOCKS_PER_SEC;
+    cout << "Time taken is " << time_takken << endl;
+}
+
+
+void TCforInsertionD(int *arr, int n)
+{
+    clock_t start, end;
+    start = clock();
+    insertionSortDescending(arr, n);
+    end = clock();
+
+    double time_takken = (double)(end - start) / CLOCKS_PER_SEC;
+    cout << "Time taken is " << time_takken << endl;
+}
+
+
+void TCFforInsertionA2(int *arr,int n)
+{
+    clock_t start, end;
+    start = clock();
+    insertionSortAscending(arr, n);
+    end = clock();
+
+    double time_takken = (double)(end - start) / CLOCKS_PER_SEC;
+    cout << "Time taken is " << time_takken << endl;
 }
 
 
@@ -79,6 +115,8 @@ int main()
     cout << "Enter index for array" << endl;
     cin >> n;
     int a[n];
+
+    cout << "Array is" << endl;
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
@@ -87,6 +125,8 @@ int main()
     {
         cout << "Enter your choice " << endl;
         cin >> p;
+
+
         switch (p)
         {
         case 1:
@@ -106,8 +146,16 @@ int main()
             break;
 
         case 5:
-            TCforInsertionSortD(a, n);
+            TCforInsertionSortA(a, n);
             break;
+
+        case 6:
+            TCforInsertionD(a, n);
+            break;
+
+        case 7:
+            TCFforInsertionA2(a, n);
+
         default:
             break;
         }

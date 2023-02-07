@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void testON2(int *a, int n,int k1)
+void testON2(int *a, int n, int k1)
 {
     int k;
     int max = *max_element(a, a + n);
@@ -31,27 +31,44 @@ void testON2(int *a, int n,int k1)
         }
     }
     int p;
-    if(k>0)
+    if (k > 0)
     {
-        p=h[k1];
+        p = h[k1];
     }
     else
     {
-        p = h[max + k1*(-1)];
+        p = h[max + k1 * (-1)];
     }
-    if(p>n/2)
+    if (p >= n / 2)
     {
-        cout << "Occurs N/2 times" << endl;
+        cout << k1 << " Occurs N/2 times" << endl;
     }
     else
     {
-        cout << "No Occurs N/2 times" << endl;
+        cout << k1 << " doesnot Occurs N/2 times" << endl;
     }
 }
 
-void testON1(int *a, int n,int k)
+void testON1(int *a, int n, int k)
 {
-    
+    int p = 0;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] == k)
+        {
+            p++;
+        }
+    }
+
+    if (p >= n / 2)
+    {
+        cout << k << " occurs N/2 times" << endl;
+    }
+    else
+    {
+        cout << k << " does not Occurs N/2 times" << endl;
+    }
 }
 
 int main()
@@ -75,12 +92,13 @@ int main()
         cin >> p;
         switch (p)
         {
-            case 1:
-            testON2(a, n,k);
+        case 1:
+            testON1(a, n, k);
             break;
 
-            case 2:
-            testON1(a, n,k);
+        case 2:
+            testON2(a, n, k);
+            break;
         }
 
         cout << "Do you want to perform more operation" << endl;
